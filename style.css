@@ -1,93 +1,219 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
 }
-html,
-body {
-  height: 100%;
-  width: 100%;
-}
-body{
-padding: 10px;
 
+html,body{
+  width:100%;
+  height:100%;
+  background:#f2f2f2;
 }
+
 .main{
-
-  display: flex;
-  height: 100%; 
-  width: 100%;
-  border-radius: 15px;
-  overflow: hidden;
- 
+  width:100%;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:12px;
 }
+
+.container{
+  width:100%;
+  height:100%;
+  border-radius:25px;
+  overflow:hidden;
+  display:flex;
+  position:relative;
+  background:#f5e8b9;
+}
+
 .left{
- 
-    background-color: #FCC60C;
-    width: 60%;
-  
+  width:60%;
+  height:100%;
+  background:#ffcb05;
+  padding:40px 60px;
+  position:relative;
+}
+
+.logo{
+  width:130px;
+  margin-bottom:120px;
+}
+
+.sub{
+  letter-spacing:8px;
+  font-size:18px;
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+h1{
+  font-size:110px;
+  line-height:1;
+  font-weight:800;
+  margin-bottom:30px;
+}
+
+.desc{
+  width:420px;
+  font-size:20px;
+  line-height:1.8;
+  color:#222;
+  margin-bottom:40px;
+}
+
+.count{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  font-size:28px;
+  font-weight:600;
+}
+
+.line{
+  width:50px;
+  height:3px;
+  background:black;
+}
+
+.pokeball{
+  width:230px;
+  height:230px;
+  border:16px solid rgba(0,0,0,0.08);
+  border-radius:50%;
+  position:absolute;
+  bottom:-70px;
+  left:-40px;
+}
+
+.pokeball::before{
+  content:"";
+  width:100%;
+  height:16px;
+  background:rgba(0,0,0,0.08);
+  position:absolute;
+  top:50%;
+  left:0;
+  transform:translateY(-50%);
+}
+
+.pokeball::after{
+  content:"";
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  border:16px solid rgba(0,0,0,0.08);
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
 }
 
 .right{
-  display: flex;
-  justify-content: flex-end;
-    background-color: #F9E9B5;
-    padding: 25px;
-    width: 40%;
+  width:40%;
+  height:100%;
+  background:#f8efd3;
+  position:relative;
 }
-.content{
- font-family: 'Poppins', sans-serif;
-  width: 50%;
-  padding: 30px 30px;
-}
-.pikachu{
- 
-  position: absolute;
-  left: 63%;
-  top: 50%;
-  transform: translate(-50% , -50%)
 
+.menu{
+  position:absolute;
+  top:40px;
+  right:45px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  cursor:pointer;
 }
-.content p {
-  font-size: 7.5px;
-  letter-spacing: 1px;
-  
- 
-}
-.content h1{
-  font-size: 80px;
-}
-.content h6 {
-  font-size: 10px;
-  letter-spacing: 2px;
 
+.menu span{
+  width:38px;
+  height:4px;
+  background:#111;
+  border-radius:10px;
 }
-.content h6 span{
- letter-spacing: 3px;
- margin-left: 1px;
-}
-footer span{
-  font-size: 10px;
-}
+
 .dots{
-  
-  position: absolute;
-  left: 90%;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  position:absolute;
+  right:35px;
+  top:50%;
+  transform:translateY(-50%);
+  display:flex;
+  flex-direction:column;
+  gap:15px;
 }
-.dot{
-  height: 10px;
-  width: 10px;
-  background-color: #000000;
-  border-radius: 50%;
+
+.dots span{
+  width:12px;
+  height:12px;
+  background:#f1c40f;
+  border-radius:50%;
+  opacity:.7;
 }
-.dotactive{
-  background-color: #FCC60C;
-  height: 12px;
-  width: 12px;
-  border-radius: 50%;
+
+.dots span:first-child{
+  background:#111;
+  opacity:1;
+}
+
+.pikachu{
+  position:absolute;
+  width:650px;
+  right:190px;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:5;
+}
+
+@media(max-width:1200px){
+
+  h1{
+    font-size:80px;
+  }
+
+  .pikachu{
+    width:500px;
+    right:60px;
+  }
+
+  .desc{
+    width:100%;
+  }
+}
+
+@media(max-width:900px){
+
+  .container{
+    flex-direction:column;
+  }
+
+  .left,.right{
+    width:100%;
+  }
+
+  .left{
+    height:65%;
+  }
+
+  .right{
+    height:35%;
+  }
+
+  .pikachu{
+    width:340px;
+    right:50%;
+    transform:translate(40%,-40%);
+  }
+
+  h1{
+    font-size:65px;
+  }
+
+  .desc{
+    font-size:17px;
+  }
+
 }
